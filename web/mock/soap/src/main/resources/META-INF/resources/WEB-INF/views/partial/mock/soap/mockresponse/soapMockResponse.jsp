@@ -133,10 +133,11 @@
                     <div id="tab-xpaths" class="tab-pane fade">
                         <h2 class="decorated"><span><spring:message code="soap.soapmockresponse.field.addxpath"/></span></h2>
                         <div>
-                            <table class="formTable">
+                            <table class="formTable" width="100%">
                                 <tr>
                                     <td class="column1"><form:label path="name"><spring:message code="soap.soapmockresponse.label.xpath"/></form:label></td>
-                                    <td class="column2"><input type="text" class="form-control" name="xpathInput" id="xpathInput"></td>
+                                    <td class="column2">
+                                        <textarea type="text" class="form-control boxsizingBorder" name="xpathInput" id="xpathInput" rows="5"></textarea></td>
                                 </tr>
                             </table>
                             <button class="btn btn-success" onclick="addXpath()" type="button"><i class="fas fa-plus-circle"></i>  <span><spring:message code="soap.soapmockresponse.button.xpath"/></span></button>

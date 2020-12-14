@@ -297,6 +297,8 @@ public class SoapOperationFileRepository extends FileRepository<SoapOperationFil
         private boolean mockOnFailure;
         @Mapping("identifyStrategy")
         private SoapOperationIdentifyStrategy identifyStrategy;
+        @Mapping("forwardIfNoMockMatches")
+        private boolean forwardIfNoMockMatches;
 
         @XmlElement
         @Override
@@ -452,6 +454,15 @@ public class SoapOperationFileRepository extends FileRepository<SoapOperationFil
 
         public void setMockOnFailure(boolean mockOnFailure) {
             this.mockOnFailure = mockOnFailure;
+        }
+
+        @XmlElement
+        public boolean getForwardIfNoMockMatches() {
+            return forwardIfNoMockMatches;
+        }
+
+        public void setForwardIfNoMockMatches(boolean forwardIfNoMockMatches) {
+            this.forwardIfNoMockMatches = forwardIfNoMockMatches;
         }
 
         @XmlElement

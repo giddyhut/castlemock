@@ -100,6 +100,10 @@
                     <td class="column1"><form:label path="mockOnFailure"><spring:message code="soap.updatesoapoperation.label.mockonfailure"/></form:label></td>
                     <td class="column2"><span class="checkbox"><form:checkbox id="mockOnFailure" class="form-control" path="mockOnFailure"/></span></td>
                 </tr>
+                <tr>
+                    <td class="column1"><form:label path="forwardIfNoMockMatches"><spring:message code="soap.updatesoapoperation.label.forwardIfNoMockMatches"/></form:label></td>
+                    <td class="column2"><span class="checkbox"><form:checkbox id="forwardIfNoMockMatches" class="form-control" path="forwardIfNoMockMatches"/></span></td>
+                </tr>
             </table>
 
             <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-check-circle"></i> <spring:message code="soap.updatesoapoperation.button.updateoperation"/></button>

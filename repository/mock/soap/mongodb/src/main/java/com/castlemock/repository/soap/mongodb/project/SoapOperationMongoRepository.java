@@ -215,6 +215,8 @@ public class SoapOperationMongoRepository extends MongoRepository<SoapOperationM
         private boolean mockOnFailure;
         @Mapping("identifyStrategy")
         private SoapOperationIdentifyStrategy identifyStrategy;
+        @Mapping("forwardIfNoMockMatches")
+        private boolean forwardIfNoMockMatches;
 
         @Override
         public String getId() {
@@ -352,6 +354,14 @@ public class SoapOperationMongoRepository extends MongoRepository<SoapOperationM
 
         public void setMockOnFailure(boolean mockOnFailure) {
             this.mockOnFailure = mockOnFailure;
+        }
+
+        public boolean getForwardIfNoMockMatches() {
+            return forwardIfNoMockMatches;
+        }
+
+        public void setForwardIfNoMockMatches(boolean forwardIfNoMockMatches) {
+            this.forwardIfNoMockMatches = forwardIfNoMockMatches;
         }
 
         public SoapOperationIdentifyStrategy getIdentifyStrategy() {

@@ -167,3 +167,9 @@ a {
         font-size: 1.6em; }
       .main-header .meta .links i:hover {
         color: #ddd; }
+
+.boxsizingBorder {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}

@@ -92,6 +92,10 @@
                     <td class="column1"><label path="mockOnFailure"><spring:message code="soap.soapoperation.label.mockonfailure"/></label></td>
                     <td class="column2"><span class="checkbox"><input type="checkbox" path="mockOnFailure" ${soapOperation.mockOnFailure == 'true' ? 'checked' : ''} disabled /></span></td>
                 </tr>
+                <tr>
+                    <td class="column1"><label path="forwardIfNoMockMatches"><spring:message code="soap.soapoperation.label.forwardIfNoMockMatches"/></label></td>
+                    <td class="column2"><span class="checkbox"><input type="checkbox" path="forwardIfNoMockMatches" ${soapOperation.forwardIfNoMockMatches == 'true' ? 'checked' : ''} disabled /></span></td>
+                </tr>
             </table>
         </div>
 

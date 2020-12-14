@@ -82,5 +82,6 @@ public class UpdateSoapOperationServiceTest {
         Assert.assertEquals(operation.getCurrentResponseSequenceIndex(), returnedSoapOperation.getCurrentResponseSequenceIndex());
         Assert.assertEquals(operation.getDefaultXPathMockResponseId(), returnedSoapOperation.getDefaultXPathMockResponseId());
         Assert.assertEquals(operation.getMockOnFailure(), returnedSoapOperation.getMockOnFailure());
+        Assert.assertEquals(operation.getForwardIfNoMockMatches(), returnedSoapOperation.getForwardIfNoMockMatches());
     }
 }

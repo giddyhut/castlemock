@@ -54,6 +54,8 @@ public class SoapOperation {
     private Boolean mockOnFailure;
     private SoapOperationIdentifyStrategy identifyStrategy;
 
+    private Boolean forwardIfNoMockMatches;
+
     private List<SoapMockResponse> mockResponses = new CopyOnWriteArrayList<SoapMockResponse>();
 
     private String invokeAddress;
@@ -269,6 +271,15 @@ public class SoapOperation {
 
     public void setMockOnFailure(Boolean mockOnFailure) {
         this.mockOnFailure = mockOnFailure;
+    }
+
+    @XmlElement
+    public Boolean getForwardIfNoMockMatches() {
+        return forwardIfNoMockMatches;
+    }
+
+    public void setForwardIfNoMockMatches(Boolean forwardIfNoMockMatches) {
+        this.forwardIfNoMockMatches = forwardIfNoMockMatches;
     }
 
     @XmlElement
