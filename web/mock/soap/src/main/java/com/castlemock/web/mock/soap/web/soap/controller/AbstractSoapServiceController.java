@@ -257,7 +257,18 @@ public abstract class AbstractSoapServiceController extends AbstractController{
             } else if (SoapOperationStatus.ECHO.equals(soapOperation.getStatus())) {
                 response = echoResponse(request);
             } else { // Status.MOCKED
-                response = mockResponse(request, soapProjectId, soapPortId, soapOperation, httpServletRequest);
+                try {
+                    response = mockResponse(request, soapProjectId, soapPortId, soapOperation, httpServletRequest);
+                } catch (SoapException soapException) {
+                    //If there's an SoapException thrown, it's usually mocking-related (no match, no default)
+                    //getMockOnFailure needs to be false, else will again reattempt mocking if forwarding fails
+                    if(soapOperation.getForwardIfNoMockMatches() && !soapOperation.getMockOnFailure()) {
+                        LOGGER.warn("No Mock Matches, attempting Forwarding for op-id {}, op-name {}", soapOperation.getId(), soapOperation.getName());
+                        response = forwardRequest(request, soapProjectId, soapPortId, soapOperation, httpServletRequest);
+                    } else {
+                        throw soapException;
+                    }
+                }
             }
 
             final HttpHeaders responseHeaders = new HttpHeaders();
